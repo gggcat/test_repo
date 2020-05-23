@@ -7,12 +7,12 @@ on:
   push:
     branches:
       - master
-  #schedule:
-  #  - cron:  '*/10 * * * *'
+  schedule:
+    - cron:  '*/10 * * * *'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "scrapy-runner"
+  # This workflow contains a single job called "test-runner"
   test-runner:
     # The type of runner that the job will run on
     runs-on: self-hosted
@@ -23,7 +23,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Run scrapy
+      # Run test
       - name: test
         shell: bash
         run: |
